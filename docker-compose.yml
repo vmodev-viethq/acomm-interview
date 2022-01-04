@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  acomm-interview:
+    build: .
+    image: acomm-interview-image
+    container_name: acomm-interview-container
+    restart: unless-stopped
+    env_file:
+      - '.env'
+    ports:
+      - "${DOCKER_PUBLIC_PORT}:${PORT}"
